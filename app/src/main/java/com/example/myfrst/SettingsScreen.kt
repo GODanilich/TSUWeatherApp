@@ -161,7 +161,7 @@ fun SwitchField(label: String, initialChecked: Boolean) {
 @Composable
 fun SelectField() {
     var expanded by remember { mutableStateOf(false) } // Состояние для открытия/закрытия списка
-    var selectedOption by remember { mutableStateOf("Градусы Цельсия") } // Выбранная опция
+    var selectedOption by remember { mutableStateOf("Градусы Цельсия °С") } // Выбранная опция
 
     Column(
         modifier = Modifier
@@ -186,7 +186,7 @@ fun SelectField() {
                     .background(Color(0xFF1E1E1E), RoundedCornerShape(8.dp))
                     .border(1.dp, Color(0xFF444444), RoundedCornerShape(8.dp))
                     .clickable { expanded = true }
-                    .padding(horizontal = 12.dp, vertical = 12.dp),
+                    .padding(horizontal = 12.dp, vertical = 10.dp),
                 horizontalArrangement = Arrangement.SpaceBetween,
                 verticalAlignment = Alignment.CenterVertically
             ) {
@@ -218,14 +218,14 @@ fun SelectField() {
                 DropdownMenuItem(
                     text = {
                         Text(
-                            text = "Градусы Цельсия",
+                            text = "Градусы Цельсия °С",
                             color = WhiteText,
                             fontSize = 16.sp,
                             fontFamily = InterFontFamily
                         )
                     },
                     onClick = {
-                        selectedOption = "Градусы Цельсия"
+                        selectedOption = "Градусы Цельсия °С"
                         expanded = false
                     },
                     modifier = Modifier
@@ -235,14 +235,14 @@ fun SelectField() {
                 DropdownMenuItem(
                     text = {
                         Text(
-                            text = "Градусы Фаренгейта",
+                            text = "Градусы Фаренгейта °F",
                             color = WhiteText,
                             fontSize = 16.sp,
                             fontFamily = InterFontFamily
                         )
                     },
                     onClick = {
-                        selectedOption = "Градусы Фаренгейта"
+                        selectedOption = "Градусы Фаренгейта °F"
                         expanded = false
                     },
                     modifier = Modifier
