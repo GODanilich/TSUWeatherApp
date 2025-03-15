@@ -33,7 +33,7 @@ class SearchViewModel(private val searchCitiesUseCase: SearchCitiesUseCase) : Vi
 
     // Поиск городов
     private fun searchCities(query: String) {
-        searchJob?.cancel() // Отменяем предыдущий поиск
+        searchJob?.cancel() // Отмена предыдущего поиска
         if (query.isBlank()) {
             _searchState.value = SearchState.Idle
             return

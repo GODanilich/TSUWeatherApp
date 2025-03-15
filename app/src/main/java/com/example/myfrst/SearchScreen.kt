@@ -152,12 +152,12 @@ fun SearchScreen(
                 )
             }
             is SearchState.Idle -> {
-                // Ничего не отображаем
+                // Ничего не отображать
             }
         }
     }
 
-    // Автоматический фокус
+    // Автофокус
     LaunchedEffect(Unit) {
         focusRequester.requestFocus()
     }
@@ -192,7 +192,7 @@ private fun highlightMatchingText(fullText: String, query: String): AnnotatedStr
                 // Совпадающий текст
                 append(fullText.substring(matchIndex, matchIndex + queryLower.length))
                 addStyle(
-                    SpanStyle(color = WhiteText70),
+                    SpanStyle(color = WhiteText),
                     matchIndex,
                     matchIndex + queryLower.length
                 )
@@ -202,7 +202,7 @@ private fun highlightMatchingText(fullText: String, query: String): AnnotatedStr
     }
 }
 
-// Фабрика для ViewModel
+// Фабрика для VM
 class SearchViewModelFactory : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         if (modelClass.isAssignableFrom(SearchViewModel::class.java)) {
